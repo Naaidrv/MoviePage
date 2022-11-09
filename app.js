@@ -28,23 +28,14 @@ const todasPelis = async() => {
 
 			data.results.forEach(pelicula => {
 				peliculas +=  `
-
-				<div class="card" id="pelicula" style="width: 18rem;">
-  					<img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="" id="poster">
-  					<div class="card-img-overlay">
-    					<h5 class="card-title">${pelicula.title}</h5>
-    					<p class="card-text">${pelicula.overview}</p>
-  					</div>
-				</div>
-				`
-				/*<div class="pelicula">
+				<div class="pelicula">
 				<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
 				<p class="titulo">${pelicula.title}</p>
 				<div class="textdes">
 				<p class="descrip">${pelicula.overview}</p>
 				</div>
 				</div>
-				`;*/
+				`;
 			});
 			document.getElementById('contenedor').innerHTML = peliculas;
 		}else if (resp.status === 401){

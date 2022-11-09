@@ -6,7 +6,7 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
-	background: #141414;
+	background: #000000;
 	color: #ffffff;
 }
 
@@ -15,7 +15,7 @@ body {
 	max-width: 1000px;
 	margin: 40px auto 100px auto;
 	display: grid;
-	grid-template-columns: repeat(4, 4fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: 40px;
 }
 
@@ -39,30 +39,27 @@ body {
 }
 
  .textdes{
-	 display: none;
-	 position: relative;
-	 background: rgba(0, 0, 0, 0.753);
+	display: none;
+	background: rgba(0, 0, 0, 0.753);
 	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#500000,endColorstr=#500000);*/
-	width: 100%;
-	height:10px;
+	width: auto;
+	height: auto;
 	color: #fff;
 	padding: 10px;
-	/*margin-bottom: 10px;*/
-    animation: fadeInDown; /* referring directly to the animation's @keyframe declaration */
-	overflow-y: hidden;
-    animation-duration: 1s;
+	margin-bottom: 10px;
+	transition: 0.3s;
 }
 
- .pelicula:hover .textdes{
-	 font-size: 12px;
-	 display: block;
-	 width: 20%;
-	 height:50%;
-     position:absolute;
-	 text-align: justify;
-	margin-top: -355px;
-    animation: fadeInUp; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 1s;
+.pelicula:hover .textdes{
+	font-size: 12px;
+	width: 220px;
+	height: 140px;
+	text-align: justify;
+	display: flex;
+	overflow: overlay;
+	position: absolute;
+	margin-top: -275px;
+
  }
 
 .paginacion {
@@ -82,15 +79,15 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
 	height: 50px;
 	width: 200px;
-	background: #241744;
 	color: #fff;
-	border-radius: 100px;
-	font-family: 'Montserrat', sans-serif;
 	font-weight: 600;
+	text-align: center;
+	border-radius: 100px;
+	background: #241744;
 	transition: .3s ease all;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .paginacion button:hover {
