@@ -34,8 +34,10 @@ const todasPelis = async() => {
 				<div class="textdes">
 				<p class="descrip">${pelicula.overview}</p>
 				</div>
-				</div>
-				`;
+				</div>`;
+				if (pelicula.overview = '') {
+					alert('Opps, no hay descripción para esta película')
+				}
 			});
 			document.getElementById('contenedor').innerHTML = peliculas;
 		}else if (resp.status === 401){
