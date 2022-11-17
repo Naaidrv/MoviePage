@@ -1,114 +1,304 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body {
-	font-family: 'Montserrat', sans-serif;
-	background: #000000;
-	color: #ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
 }
 
-.contenedor {
-	gap: 40px;
-	width: 90%;
-	display: grid;
-	max-width: 1000px;
-	margin: 40px auto 100px auto;
-	grid-template-columns: repeat(4, 1fr);
+:root{
+    --primary-color:#0c0c0c;
+    --secondary-color: #0c0c0c;
 }
 
-.contenedor .pelicula {
-	text-align: center;
+body{
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
-.contenedor .pelicula .titulo {
-	font-size: 16px;
-	font-weight: 600;
+
+header{
+    padding:1rem;
+    display:flex;
+	position: sticky;
+	justify-content: space-between;
+    background-color: var(--secondary-color);
 }
 
-.contenedor .pelicula .poster {
-	width: 100%;
-	padding: 2px;
-    color: #ddd;
-	border-radius: 5px;
-	margin-bottom: 10px;
-    box-shadow: 0 0 20px #03f;
-    /*background-color: rgb(17, 17, 17);*/
+.search{
+    color:#fff;
+    font-size: 1rem;
+    padding:0.5rem 1rem;
+	border-radius: 50px;
+    font-family: inherit;
+    background-color: #292929;
+    border: 2px solid #292929;
 }
 
-.textdes{
-	opacity: 0;
-	height: 42%;
-	width: 15.2%;
-	padding: 10px;
+
+.search:focus{
+    outline:0;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder{
+    color: rgb(0, 85, 182);
+}
+
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    width: 300px;
+    margin: 2rem;
+	margin-top: 4%;
+    overflow: hidden;
+    position:relative;
+    border-radius: 10px;
+	border: 4px solid #0c0c0c;
+	box-shadow: 0 0 20px #03f;
+    background-color: var(--secondary-color);
+}
+
+
+.movie img{
+    width:100%;
+}
+
+.movie-info{
+    color:#eee;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem 1rem;
+    justify-content: space-between;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info span{
+	font-weight: bold;
+	border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    /*background-color: pink;*/
+}
+
+.movie-info span.green{
+    color:rgb(90, 233, 90);
+}
+
+.movie-info span.orange{
+    color:rgb(255, 174, 0);
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+	left:0;
+    right:0;
+    bottom:0;
+    padding: 1rem;
 	color: white;
-	visibility: hidden;
-	position: absolute;
-	transition: 0.5s ease-in-out all;
+    max-height: 100%;
+    position:absolute;
+	overflow-y: scroll;
+	text-align: justify;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+    background-color: rgba(15, 15, 15, 0.925);
 }
 
-.textdes::-webkit-scrollbar{
+.overview::-webkit-scrollbar{
 	width: 5px;
 }
 
-.textdes::-webkit-scrollbar-track{
+.overview::-webkit-scrollbar-track{
 	-webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 }
 
-.textdes::-webkit-scrollbar-thumb{
+.overview::-webkit-scrollbar-thumb{
 	border-radius: 5px;
-	-webkit-box-shadow:inset 0 0 6px red;
+	-webkit-box-shadow:inset 0 0 6px rgb(15, 80, 199);
 }
 
- .pelicula:hover .textdes{
-	/*padding: 42% 0;*/
-	opacity: 1;
-	height: 20%;
-	width: 15.2%;
-	overflow: scroll;
-	text-align: center;
-	margin-top: -355px;
-	visibility: visible;
-	background-color: rgba(100,0,120,0.4);
- }
-
-.paginacion {
-	position: fixed;
-	bottom: 0;
-	background: #100a1f;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	padding: 10px;
+.movie:hover .overview{
+    transform:translateY(0)
 }
 
-.paginacion button {
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+	margin-bottom: 6%;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag{
+    margin:5px;
+    color:white;
+    cursor: pointer;
+    padding:10px 20px;
+    border-radius: 50px;
+    display:inline-block;
+    transition: all 0.35s ease-out;
+    border: 2px solid rgb(14, 48, 185);
+}
+
+.tag:hover{
+	background: rgb(14, 48, 185);
+}
+
+.tag.highlight{
+    background-color: red;
+}
+.no-results{
+    color:white;
+}
+
+.pagination{
+    display:flex;
+    color:white;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+	color:grey;
+    cursor:not-allowed;
+}
+
+.current{
+	font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid orange;
+}
+
+.verMas{
+    border:0;
+	color:white;
+    font-size: 16px;
+    margin-top: 5px;
 	cursor: pointer;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	height: 50px;
-	width: 200px;
-	background: #241744;
-	color: #fff;
-	border-radius: 100px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	transition: .3s ease all;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: rgb(15, 80, 199);
+}
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: 1;
+    height: 100%;
+    position: fixed;
+    transition: 0.5s; 
+    overflow-x: hidden;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+  }
+  
+  /* Position the content inside the overlay */
+  .contenido {
+	  top: 10%;
+	  width: 100%;
+	  margin-top: 30px;
+	  text-align: center;
+	  position: relative;
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    display: block;
+    font-size: 36px;
+    color: #818181;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+	  top: 20px;
+	  right: 45px;
+	  font-size: 60px;
+	  position: absolute;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 540px) {
+    .overlay a {font-size: 20px; color: red;}
+    .overlay .closebtn {
+		top: 15px;
+		right: 35px;
+		font-size: 40px;
+    }
+  }
+
+
+  .embed.hide{
+      display: none;
+  }
+
+  .embed.show{
+      display: inline-block;
+  }
+
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+
+  
+  .arrow.right-arrow{
+    top:50%;
+    right:5%;
+    transform: translateY(-50%);
 }
 
-.paginacion button:hover {
-	background: #137c32;
+.dots{
+    margin-top: 30px;
 }
 
-@media only screen and (max-width:540px){
-	.contenedor{
-		width: 90%;
-		grid-template-columns: repeat(1, 1fr);
-	}
+.dots .dot {
+	margin: 5px;
+	color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+}
+
+.dots .dot.active{
+    border-color: rgb(15, 80, 199);
 }
