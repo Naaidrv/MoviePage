@@ -165,7 +165,7 @@ function showMovies(data) {
 			${vote_average}</span>
             </div>
             <div class="overview">
-                <h4 class="no-results">¡Opps!, No se hay una sinopsis disponible. :c</h4>
+                <h4 class="no-results">¡Opps!, No hay una sinopsis disponible. :c</h4>
             </div>`
 		}
     })
