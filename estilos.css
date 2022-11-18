@@ -6,6 +6,7 @@
 
 :root{
     --primary-color:#0c0c0c;
+    --secondary-color: #0c0c0c;
 }
 
 body{
@@ -315,7 +316,7 @@ main{
     border-color: rgb(15, 80, 199);
 }
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 320px), (max-width: 375px), (max-width: 450px){
     header{
         width: 100%;
         padding:1rem;
@@ -327,11 +328,23 @@ main{
     }
 
     header img{
-        width: 50px;
+        width: 70px;
     }
     
     .search{
-        width: 90%;
-        margin-left: 2rem;
+        width: 86%;
+        margin-left: 2.4rem;
+    }
+
+    .tag{
+        margin:5px;
+        color:white;
+        font-size: 8pt;
+        cursor: pointer;
+        padding:6px 10px;
+        border-radius: 50px;
+        display:inline-block;
+        transition: all 0.35s ease-out;
+        border: 2px solid rgb(15, 80, 199);
     }
 }
