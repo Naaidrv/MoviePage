@@ -21,7 +21,7 @@ header{
     display:flex;
     margin-bottom: 4%;
     position: sticky;
-	justify-content: space-between;
+    justify-content:space-around;
     background-color:rgb(34, 34, 34);
 }
 
