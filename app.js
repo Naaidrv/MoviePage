@@ -82,7 +82,7 @@ function clearBtn(){
         let clear = document.createElement('div');
         clear.classList.add('tag','highlight');
         clear.id = 'clear';
-        clear.innerText = 'Clear x';
+        clear.innerText = 'Quitar selección';
         clear.addEventListener('click', () => {
             selectedGenre = [];
             setGenre();            
