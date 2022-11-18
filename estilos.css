@@ -189,7 +189,7 @@ main{
     font-weight: 600;
     padding: 10px 20px;
     border-radius: 50%;
-    border: 5px solid orange;
+    border: 5px solid rgb(15, 80, 199);
 }
 
 .verMas{
@@ -308,7 +308,7 @@ main{
     font-weight: 600;
     padding: 5px 15px;
     border-radius: 50%;
-    border: 5px solid var(--secondary-color);
+    border: 5px solid rgb(15, 80, 199);
 }
 
 .dots .dot.active{
